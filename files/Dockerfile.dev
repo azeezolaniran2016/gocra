@@ -1,0 +1,9 @@
+FROM golang:1.19-alpine
+
+WORKDIR /app
+
+EXPOSE 80
+
+RUN go install github.com/cosmtrek/air@latest
+
+ENTRYPOINT ["air", "-c", ".air.toml"]
